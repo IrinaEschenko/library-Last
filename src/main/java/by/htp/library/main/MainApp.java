@@ -28,20 +28,54 @@ public class MainApp {
 							+ "If you want to see info about any book Enter 2\n"
 							+ "If you want to exit Enter Q \n"
 							+ "Do your choise, please\n");
-				}
-				while(!(in.nextLine().equals("Q"))) {
-					if(in.nextLine().equals("1")) {
-						rddb.seeCatalog();
-					}
-					if(in.nextLine().equals("2")) {}
-				}
 				
-		 
-		 }else if((name.equals("L") ))
+				while(!(in.nextLine().equals("Q"))) {
+					
+					switch (in.nextInt()) {
+					
+					case 1:
+						rddb.seeCatalog();
+						System.out.println("If you want to see catalog Enter 1\n"
+								+ "If you want to see info about any book Enter 2\n"
+								+ "If you want to exit Enter Q \n"
+								+ "Do your choise, please");
+						break;
+					case 2:
+						System.out.println("Please, input the book_number, \n "
+								+ "and I'll show you the BOOK_INFO :) ");
+						int idBook = in.nextInt();
+						System.out.println(rddb.read(idBook).toString_book_info());
+						System.out.println("If you want to see catalog Enter 1\n"
+								+ "If you want to see info about any book Enter 2\n"
+								+ "If you want to exit Enter Q \n"
+								+ "Do your choise, please");
+						break;
+					}
+				}
+					/*if(in.nextLine().equals("1")) {
+						rddb.seeCatalog();
+						
+					}
+					else if(in.nextLine().equals("2")) {
+						System.out.println("Please, input the book_number, \n "
+								+ "and I'll show you the BOOK_INFO :) ");
+						int idBook = in.nextInt();
+						System.out.println(rddb.read(idBook).toString_book_info());
+						System.out.println("If you want to see catalog Enter 1\n"
+								+ "If you want to see info about any book Enter 2\n"
+								+ "If you want to exit Enter Q \n"
+								+ "Do your choise, please\n");
+					}
+					
+				}
+				*/
+		 }
+		 else if((name.equals("L") ))
 					System.out.println("Hello, Librarian. Please, log in");
 				else{
 		throw new Exception("You should enter 'L' or 'R' ");	
 		}
+		 }
 		}
 		catch (Exception ex) {
 			System.out.println(ex.getMessage());
@@ -51,5 +85,4 @@ public class MainApp {
 		}
 
 	}
-	
-}
+		}

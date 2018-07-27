@@ -111,6 +111,8 @@ public class ReaderDaoDB implements ReaderDao {
 
 				book.setId(rs.getInt("id_book"));
 				book.setTitle(rs.getString("title"));
+				book.setAuthor(rs.getString("author"));
+				book.setAboutBook(rs.getString("information"));
 
 			}
 		} catch (SQLException e) {
